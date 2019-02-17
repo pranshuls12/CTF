@@ -113,8 +113,7 @@ $this->load->helper('form');
 
 
 <footer>
-	<p style="color: white; text-align: center;">Event Sponsored by : <b style="color: red"><a href="http://www.lucideus.com" target="_blank" style="color: white; font-size: 25px;">< <span style="color: red;">L</span>ucideus <span style="color: red;">T</span>ech ></a></b></p></p>
-	<p class="text-left">Page rendered in <strong>{elapsed_time}</strong> seconds.
+
 </footer>	
 
 </body>
