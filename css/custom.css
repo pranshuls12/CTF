@@ -47,7 +47,7 @@ footer{
 	margin: auto;
 	width: 910px;
 	height: 910px;
-	background-color: #008080;
+	background:url("../assets/green.jpg");
 }
 
 .middle{
