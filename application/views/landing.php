@@ -25,9 +25,30 @@
 </head>
 
 <body>
+    
    <div class="jumbotron text-center">
-  <h1>Thank you </h1> 
-  <p>For Participating</p> 
+       <?php 
+       if ($msg==1) {
+           # code...
+           ?><h1>
+               <h1>
+                   Welcome
+               </h1>
+        <h3><a href='<?= base_url('level'); ?>'>Click Here To Start</a></h3>
+               
+           </h1><?php
+       } else {
+        ?><h1>
+        <h1>
+        Thank you for Participating
+        </h1>
+ <h3><a href='<?= base_url('logout'); ?>'>Logout</a></h3>
+        
+    </h1><?php
+       }
+       
+		
+       ?>
 </div>
 
 <script type="text/javascript" src="./js/main.js"></script>

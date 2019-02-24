@@ -15,13 +15,13 @@ $this->load->helper('form');
 	<script src="<?php echo base_url('js/bootstrap.min.js'); ?>"></script>
 	<?php
 	if($level==8){
-		echo "<title>Catch the flag || robotsarethefuture</title>";
+		echo "<title>Catch the flag || MADHAV INSTITUTE OF TECHNOLOGY & SCIENCE || robotsarethefuture</title>";
 
 
 
 }
 else{
-	echo "<title>Catch the flag</title>";
+	echo "<title>Catch the flag || MADHAV INSTITUTE OF TECHNOLOGY & SCIENCE</title>";
 
 
 }
@@ -37,15 +37,6 @@ else{
 	
 </head>
 <body onkeydown="TriggeredKey(this)">
-	<!--  <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom">
-	  <div class="container-fluid">
-	    <ul class="nav navbar-nav">
-	      <li class="active"><a href="#">Home</a></li> -->
-	      <!-- <li><a href="<?php echo base_url(''); ?>index.php/welcome/rules"><p class='navbar-options'><span class='navbar-first'>R</span>ULES()</p></a></li>
-	      <li class="current"><a href="<?php echo base_url(''); ?>index.php/welcome/level"><p class='navbar-options'><span class='navbar-first'>L</span>EVELS()</p></a></li>
-	    </ul>
-	  </div>
-	</nav> -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -53,11 +44,9 @@ else{
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('rules'); ?>">Rules()<span class="sr-only">(current)</span></a>
-      </li>
+      
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(''); ?>index.php/welcome/level">Levels</a>
+        <a class="nav-link" href="<?php echo base_url('level'); ?>">Levels</a>
       </li>
       <li class="nav-item">
 

@@ -68,9 +68,9 @@ class User extends CI_Controller {
 
 	public function logout()
     {
-        $time = date('h:i:s',time());
-		$mail = $this->session->userdata('mail');
-		$data= $this->level_model->logout_time($mail,$time);
+        // $time = date('h:i:s',time());
+		// $mail = $this->session->userdata('mail');
+		// $data= $this->level_model->logout_time($mail,$time);
         $array_items = array('id', 'mail', 'level');
         $this->session->unset_userdata($array_items);
         $this->session->sess_destroy();
@@ -270,7 +270,7 @@ class User extends CI_Controller {
 			case '8'://robots.txt
 				$this->form_validation->set_rules('flag', 'Answer', 'required');
 				if ($this->form_validation->run() == FALSE) {
-					$data['text'] = '<b>Level 9</b><br><br><br><IMG SRC='.base_url('images/robot.jpg').'><br><br><br>';
+					$data['text'] = '<b>Level 8</b><br><br><br><IMG SRC='.base_url('images/robot.jpg').'><br><br><br>';
 					$data['level'] = $level;
 					$data['encrypted'] = '';
 					$this->load->view('levels', $data);
@@ -278,10 +278,10 @@ class User extends CI_Controller {
 					if($flag=='robotsarethefuture'){
 						$update_data = $this->level_model->update_status($id, $level);
 						$this->session->set_userdata('level', $level);
-						redirect(base_url('landing'));
+						redirect(base_url('complete'));
 					}
 					else{
-						$data['text'] = '<b>Level 9</b><br><br><br><IMG SRC='.base_url('images/robot.jpg').'><br><br><br><p style="color:yellow;">Errrhh! Try Again!</p>';
+						$data['text'] = '<b>Level 8</b><br><br><br><IMG SRC='.base_url('images/robot.jpg').'><br><br><br><p style="color:yellow;">Errrhh! Try Again!</p>';
 						$data['level'] = $level;
 						$data['encrypted'] = '';
 						$this->load->view('levels', $data);
@@ -290,7 +290,7 @@ class User extends CI_Controller {
 				break;
 
 			case '9':
-				// echo "<script>alert('$level');</script>";
+				$this->endlanding();
 				break;
 
 			default:
@@ -299,42 +299,53 @@ class User extends CI_Controller {
 
 		}
 	}
-	public function landing(){
-		$this->load->view('landing');
+	public function startlanding(){
+		$data['msg'] = 1;
+		$this->load->view('landing', $data);
 	}
 
-	public function level5Encrypt(){
-		if($this->input->post('submit')){
-			$c = $this->input->post('test');
-			$new='';
-			for($i=0; $i<strlen($c); ++$i){
-				$new .= chr(ord($c[$i])+$i);
-			}
-			$data['text'] = '<b>Level 5</b><br><br><br>Our blooming Network Security Analyst Sam has encrypted his password. The encryption system is publically available and can be accessed with this form:<br>Please enter a string to have it encrypted.<br>';
-			$data['level'] = $this->session->userdata('level')+1;
-			$data['encrypted'] = $new;
-			$this->load->view('levels', $data);
-			// echo $new;
-		}
+	public function endlanding(){
+		$data['msg'] = 0;
+		$this->load->view('landing', $data);
 	}
 
-	public function level11Encrypt(){
-		if($this->input->post('submit')){
-			$c = $this->input->post('test');
-			$new='';
-			for($i=0; $i<strlen($c); ++$i){
-				$ascii = ord($c[$i]);
-				$first = rand(1,$ascii/2);
-				$int1 = $ascii-$first;
-				$second = rand(1,$int1/2);
-				$third = $int1-$second;
-				$new.='.'.$first.'.'.$second.'.'.$third;
-			}
-			$data['text'] = "<b>Level 10</b><br><br>Hello esteemed hacker, I hope you have some decent cryptography skills. I have some text I need decrypted.<br>I have done some information gathering on my network and I have recovered some data. However, it is encrypted and I cannot seem to decode it using any of my basic decryption tools. I have narrowed it down to the algorithm used to encrypt it, but it is beyond my scope.<br>Enter text to encrypt it.<br>";
-				$data['level'] = $this->session->userdata('level')+1;
-				$data['encrypted'] = $new;
-				$this->load->view('levels', $data);
-		}
+	// public function level5Encrypt(){
+	// 	if($this->input->post('submit')){
+	// 		$c = $this->input->post('test');
+	// 		$new='';
+	// 		for($i=0; $i<strlen($c); ++$i){
+	// 			$new .= chr(ord($c[$i])+$i);
+	// 		}
+	// 		$data['text'] = '<b>Level 5</b><br><br><br>Our blooming Network Security Analyst Sam has encrypted his password. The encryption system is publically available and can be accessed with this form:<br>Please enter a string to have it encrypted.<br>';
+	// 		$data['level'] = $this->session->userdata('level')+1;
+	// 		$data['encrypted'] = $new;
+	// 		$this->load->view('levels', $data);
+	// 		// echo $new;
+	// 	}
+	// }
+
+	// public function level11Encrypt(){
+	// 	if($this->input->post('submit')){
+	// 		$c = $this->input->post('test');
+	// 		$new='';
+	// 		for($i=0; $i<strlen($c); ++$i){
+	// 			$ascii = ord($c[$i]);
+	// 			$first = rand(1,$ascii/2);
+	// 			$int1 = $ascii-$first;
+	// 			$second = rand(1,$int1/2);
+	// 			$third = $int1-$second;
+	// 			$new.='.'.$first.'.'.$second.'.'.$third;
+	// 		}
+	// 		$data['text'] = "<b>Level 10</b><br><br>Hello esteemed hacker, I hope you have some decent cryptography skills. I have some text I need decrypted.<br>I have done some information gathering on my network and I have recovered some data. However, it is encrypted and I cannot seem to decode it using any of my basic decryption tools. I have narrowed it down to the algorithm used to encrypt it, but it is beyond my scope.<br>Enter text to encrypt it.<br>";
+	// 			$data['level'] = $this->session->userdata('level')+1;
+	// 			$data['encrypted'] = $new;
+	// 			$this->load->view('levels', $data);
+	// 	}
+	// }
+
+	public function rules()
+	{
+		$this->load->view('rules');
 	}
 
 }

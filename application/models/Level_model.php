@@ -12,7 +12,7 @@ class Level_model extends CI_Model {
     {
         // $now = new DateTime();
         // $now->setTimezone(new DateTimezone('Asia/Kolkata'));
-        $time = date('h:i:s', time());
+        $time = date('Y-m-d h:i:s', time());
         $this->db->select('id, user_email, user_level')->from('status_table');
         $this->db->where('user_email',$email);
         $this->db->where('user_password', $password);
@@ -37,17 +37,17 @@ class Level_model extends CI_Model {
      	}
     }
 
-    public function logout_time($email, $time)
-    {
-        $this->db->where('user_email',$email);
-    	$res1 = $this->db->update('status_table',array('logout_time' => $time));
-    	// if($res1){
-        //     // echo "<script>alert();</script>";
-     	// 	// return $res1;
-     	// }else{
-     	// 	return 0;
-     	// }
-    }
+    // public function logout_time($email, $time)
+    // {
+    //     $this->db->where('user_email',$email);
+    // 	$res1 = $this->db->update('status_table',array('logout_time' => $time));
+    // 	// if($res1){
+    //     //     // echo "<script>alert();</script>";
+    //  	// 	// return $res1;
+    //  	// }else{
+    //  	// 	return 0;
+    //  	// }
+    // }
 
     public function update_status($id, $level)
     {
