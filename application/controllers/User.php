@@ -41,10 +41,10 @@ class User extends CI_Controller {
 			$login_data = $this->level_model->user_login($email, $password);
 			
             if ($login_data) {
-                $session_data = array(
+				$session_data = array(
                     'id' => $login_data->id,
                     'mail' => $login_data->email,
-                    'level'=> $login_data->level,
+                    'level'=> $login_data->user_level,
                     // 'time'=> $login_data->login_time
 				);
 
@@ -68,6 +68,9 @@ class User extends CI_Controller {
 
 	public function logout()
     {
+        $time = date('h:i:s',time());
+		$mail = $this->session->userdata('mail');
+		$data= $this->level_model->logout_time($mail,$time);
         $array_items = array('id', 'mail', 'level');
         $this->session->unset_userdata($array_items);
         $this->session->sess_destroy();
