@@ -10,7 +10,7 @@
 <html> 
 
 <head> 
-<title>CryptZilla</title> 
+<title>Catch The Flag</title> 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
 <style type="text/css"> 
 	body {

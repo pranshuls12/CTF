@@ -13,7 +13,7 @@ $this->load->helper('form');
 	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"> 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="<?php echo base_url('js/bootstrap.min.js'); ?>"></script>
-	<title>CryptZilla</title>
+	<title>Catch The Flag</title>
 </head>
 <body >
 	 <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom">

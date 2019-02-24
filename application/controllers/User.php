@@ -173,42 +173,9 @@ class User extends CI_Controller {
 
 				break;
 
-			case '5': //encryption : c[i]+i
 
-				// if($flag=='chronicle'){
-					
-					$update_data = $this->level_model->update_status($id, $level);
-					$this->session->set_userdata('level', $level);
-					redirect(base_url('level'));
-				// }
-				// else{
-				// 	$data['text'] = '<b><b>Level 5</b><br><br><br>Our blooming Network Security Analyst Sam has encrypted his password. The encryption system is publically available and can be accessed with this form:<br>Please enter a string to have it encrypted.<br><p style="color:yellow;">Errrhh! Try Again!</p>';
-				// 	$data['level'] = $level;
-				// 	$data['encrypted'] = '';
-				// 	$this->load->view('levels', $data);
-				// }
 
-				break;
-
-			case '6': //user agent manipulation
-				// echo 'in level 6';
-
-				// $agent = $this->agent->agent_string();
-				// if($agent=='p0wnBrowser'){
-					$update_data = $this->level_model->update_status($id, $level);
-					$this->session->set_userdata('level', $level);
-					redirect(base_url('level'));
-				// }
-				// else{
-				// 	$this->load->view('pawn');
-				// }
-
-				// $data['text'] = "<b>Level 6</b><br><br><br>You need to get access to the contents of this <a href=".base_url('')."index.php/welcome/levelInput style='color:red;'>SITE</a>. In order to achieve this, however, you must buy the <span style='color:yellow;'>p0wnBrowser</span> web browser. Since it is too expensive, you will have to <span style='color:yellow;'>fool</span> the system in some way, so that it let you read the site's contents.<br>";
-				// $data['level'] = $this->session->userdata('level')+1;
-				// $this->load->view('levels', $data);
-				break;
-
-			case '7': //deeper source
+			case '5': //deeper source
 				$this->form_validation->set_rules('flag', 'Answer', 'required');
 				if ($this->form_validation->run() == FALSE) {
 					$data['text'] = "<b>Level 7</b><br><br> I changed the world. Now i want to go Deeper and Style up hell too!! Don't worry GOD's with us ;)";
@@ -230,7 +197,7 @@ class User extends CI_Controller {
 				
 				break;
 
-			case '8': //t9 cipher
+			case '6': //t9 cipher
 				$this->form_validation->set_rules('flag', 'Answer', 'required');
 				if ($this->form_validation->run() == FALSE) {
 					$data['text'] = "<b>Level 8</b><br><br>Missing my Nokia 1100<br><br><b style='font-family: sans-serif;'>84470470207263660787464</b><br><br>";
@@ -251,33 +218,8 @@ class User extends CI_Controller {
 				
 				break;
 
-			case '9': //directory+cookie
-				// $sId=$this->input->post('sId');
-				// if($sId=='Kat'){
-				// 	$cookie = array('name'   => 'userLevel',
-				// 			'value'  => 'user',
-				// 			'expire' => 0,
-				// 			'secure' => FALSE
-				// 		);
-				// 	set_cookie($cookie);
-				// 	$c=get_cookie('userLevel');
-				// 	if($c=='admin'){
-						$update_data = $this->level_model->update_status($id, $level);
-						$this->session->set_userdata('level', $level);
-						redirect(base_url('level'));
-				// 	}
-				// 	else
-				// 		$this->load->view('acmeMarks');
-				// }
-				// else
-				// 	$this->load->view('acme');
-				
-				// $data['text'] = "<b>Level 9</b><br><br>A good friend of mine studies at <a href=".base_url('')."index.php/welcome/levelInput style='color:red;'>Acme University</a>, in the Computer Science and Telecomms Department. Unfortunately, her grades are not that good. You are now thinking 'This is big news!'... Hmmm, maybe not. What is big news, however, is this: The network administrator asked for 1,00,000 Rupees to change her marks into A's. This is obviously a case of administrative authority abuse. Hence... a good chance for public exposure...<br>I need to get into the site as admin and upload a script in the web-root directory, that will present all required evidence for the University's latest 're-marking' practices!<br>Can you get the admin level access for me...<br>Good Luck!<br><br>";
-				// $data['level'] = $this->session->userdata('level')+1;
-				// $this->load->view('levels', $data);
-				break;
 
-			case '10': //html+directory
+			case '7': //html+directory
 				$this->form_validation->set_rules('flag', 'Answer', 'required');
 				if ($this->form_validation->run() == FALSE) {
 					$data['text'] = "<b>Level 10</b><br><br>Our agents (hackers) informed us that there reasonable suspicion that  the site of this <a href=".base_url('')."level_9/ style='color:red;' target='_blank'>Logistics Company</a> is a blind for a human organs'  smuggling organisation.<br> This organisation attracts its victims through advertisments for jobs  with very high salaries. They choose those ones who do not have many  relatives, they assasinate them and then sell their organs to very rich  clients, at very high prices.<br> These employees are registered in the secret files of the company as 'special clients'!<br> One of our agents has been hired as by the particular company. Unfortunately, since 01/01/2017 he has gone missing.<br> We know that our agent is alive, but we cannot contact him. Last time he  communicated with us, he mentioned that we could contact him at the  e-mail address the company has supplied him with, should there a problem  arise.<br> The problem is that when we last talked to him, he had not a company  e-mail address yet, but he told us that his e-mail can be found through  the company's site.<br> The only thing we remember is that he was hired on Friday the 13th!<br> You have to find his e-mail address and send it to us by using the input filed given below.<br> Good luck!!!<br><br>";
@@ -298,7 +240,7 @@ class User extends CI_Controller {
 
 				break;
 
-			case '11': //encrytion : sum of numbers == ascii
+			case '8': //encrytion : sum of numbers == ascii
 				$this->form_validation->set_rules('flag', 'Answer', 'required');
 				if ($this->form_validation->run() == FALSE) {
 					$data['text'] = '<b>Level 11</b><br><br>Hello esteemed hacker, I hope you have some decent cryptography skills. I have some text I need decrypted.<br>I have done some information gathering on my network and I have recovered some data. However, it is encrypted and I cannot seem to decode it using any of my basic decryption tools. I have narrowed it down to the algorithm used to encrypt it, but it is beyond my scope.<br>Enter text to encrypt it.<br>';
@@ -321,7 +263,7 @@ class User extends CI_Controller {
 
 				break;
 
-			case '12'://robots.txt
+			case '9'://robots.txt
 				$this->form_validation->set_rules('flag', 'Answer', 'required');
 				if ($this->form_validation->run() == FALSE) {
 					$data['text'] = '<b>Level 12</b><br><br><br><IMG SRC='.base_url('images/robot.jpg').'><br><br><br><p style="color:yellow;">Errrhh! Try Again!</p>';

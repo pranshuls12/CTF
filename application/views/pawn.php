@@ -12,7 +12,7 @@
 <head>
 <meta http-equiv="Content-Language" content="en-us">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1253">
-<title>CryptZilla</title>
+<title>Catch The Flag</title>
 <style type="text/css">
 .style2 {
 	font-size: xx-large;
