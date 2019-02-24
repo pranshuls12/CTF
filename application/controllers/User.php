@@ -275,7 +275,7 @@ class User extends CI_Controller {
 					if($flag=='robotsarethefuture'){
 						$update_data = $this->level_model->update_status($id, $level);
 						$this->session->set_userdata('level', $level);
-						redirect(base_url('level'));
+						redirect(base_url('landing'));
 					}
 					else{
 						$data['text'] = '<b>Level 9</b><br><br><br><IMG SRC='.base_url('images/robot.jpg').'><br><br><br><p style="color:yellow;">Errrhh! Try Again!</p>';
@@ -286,7 +286,7 @@ class User extends CI_Controller {
 				}
 				break;
 
-			case '10':
+			case '9':
 				// echo "<script>alert('$level');</script>";
 				break;
 
@@ -295,6 +295,9 @@ class User extends CI_Controller {
 				break;
 
 		}
+	}
+	public function landing(){
+		$this->load->view('landing');
 	}
 
 	public function level5Encrypt(){

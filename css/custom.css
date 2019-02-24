@@ -34,7 +34,7 @@ footer{
 }
 
 .navbar-options{
-	font-size: 30px;
+	font-size: 48px;
 	color: #000000;
 }
 
@@ -101,5 +101,8 @@ footer{
 	background-color: #555555;
 	color: #000000;
 }
-
+.navbar-light .navbar-nav .nav-link {
+    font-size: 27px;
+    color: rgba(245, 235, 235, 0.93);
+}
 /* Flag: thisaintacolor */

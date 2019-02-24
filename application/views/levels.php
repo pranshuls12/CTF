@@ -13,7 +13,19 @@ $this->load->helper('form');
 	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"> 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="<?php echo base_url('js/bootstrap.min.js'); ?>"></script>
-	<title>Catch the flag</title>
+	<?php
+	if($level==8){
+		echo "<title>Catch the flag || robotsarethefuture</title>";
+
+
+
+}
+else{
+	echo "<title>Catch the flag</title>";
+
+
+}
+?>
 	<script language='JavaScript'>
 	function TriggeredKey(e)
 	{
@@ -22,7 +34,7 @@ $this->load->helper('form');
 	    if (window.event.keyCode != 13 ) return false;
 	}
 	</script>
-	?>
+	
 </head>
 <body onkeydown="TriggeredKey(this)">
 	<!--  <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom">
@@ -42,11 +54,14 @@ $this->load->helper('form');
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url(''); ?>index.php/welcome/rules">Rules()<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?php echo base_url('rules'); ?>">Rules()<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url(''); ?>index.php/welcome/level">Levels</a>
       </li>
+      <li class="nav-item">
+
+        <a class="nav-link" href="<?php echo base_url('logout'); ?>">Logout</a>
       </li>
     </ul>
   </div>

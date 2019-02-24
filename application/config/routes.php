@@ -58,3 +58,5 @@ $route['level'] = 'user/level';
 $route['level5Encrypt'] = 'user/level5Encrypt';
 $route['level11Encrypt'] = 'user/level11Encrypt';
 $route['logout'] = 'user/logout';
+$route['landing']='user/landing';
+$route['rules']='user/rules';
